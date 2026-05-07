@@ -9,7 +9,7 @@ namespace ApiLabbVer2.Models
         [Required]
         public string Url { get; set; }
         public int PersonId { get; set; }
-        public int InterstId { get; set; }
+        public int Interestid { get; set; }
 
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using static System.Net.WebRequestMethods;
 namespace ApiLabbVer2.Models
 {
     public class ApiDbContext : DbContext
@@ -33,10 +34,36 @@ namespace ApiLabbVer2.Models
                 new Interest { Id = 6, Title = "Läsa", Description = "läsa böcker och sånt"}
             );
 
+            modelBuilder.Entity<PersonInterest>().HasData(
+                new PersonInterest { Id = 1, PersonId = 1, Interestid = 1},
+                new PersonInterest { Id = 2, PersonId = 1, Interestid = 2},
+
+                new PersonInterest { Id = 3, PersonId = 2, Interestid = 3},
+                new PersonInterest { Id = 4, PersonId = 2, Interestid = 6},
+
+                new PersonInterest { Id = 5, PersonId = 3, Interestid = 5},
+
+                new PersonInterest { Id = 6, PersonId = 4, Interestid = 2},
+                new PersonInterest { Id = 7, PersonId = 4, Interestid = 3},
+
+                new PersonInterest { Id = 8, PersonId = 5, Interestid = 1},
+                new PersonInterest { Id = 9, PersonId = 5, Interestid = 4},
+
+                new PersonInterest { Id = 10, PersonId = 6, Interestid = 4}
+            );
+
             modelBuilder.Entity<Link>().HasData(
-                new Link { Id = 1, }
+                new Link { Id = 1, PersonId = 1, Interestid = 1, Url = "https://www.aftonbladet.se/"},
 
+                new Link { Id = 3, PersonId = 2, Interestid = 3, Url = "https://www.youtube.com/" },
 
+                new Link { Id = 5, PersonId = 3, Interestid = 5, Url = "https://visitvarberg.se/uppleva/subbe-fyr" },
+
+                new Link { Id = 6, PersonId = 4, Interestid = 2, Url = "https://TotallyARealLink.Real"},
+
+                new Link { Id = 8, PersonId = 5, Interestid = 1, Url = "https://YEYEYEYEYE.com"},
+
+                new Link { Id = 10, PersonId = 6, Interestid = 4, Url = "https://halloDer"}
             );
             
         }
