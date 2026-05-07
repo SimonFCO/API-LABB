@@ -4,10 +4,14 @@ namespace ApiLabbVer2.Models
 {
     public class ApiDbContext : DbContext
     {
+        public ApiDbContext(DbContextOptions<ApiDbContext> options) : base(options)
+        {
+        }
         public DbSet<Interest> Interests { get; set; }
 
         public DbSet<Link> Link { get; set; }
         public DbSet<Person> Persons { get; set; }
+        public DbSet<PersonInterest> PersonInterests { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
