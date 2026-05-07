@@ -12,7 +12,7 @@ namespace ApiLabbVer2.Models
         [Required]
         public int PhoneNumber { get; set; }
 
-        public ICollection<Link> Links { get; set; }
-
+        ICollection<Interest> Interests { get; set; }
+        ICollection<Link> Links { get; set; }
     }
 }

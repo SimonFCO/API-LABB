@@ -9,7 +9,5 @@ namespace ApiLabbVer2.Models
         [Required]
         public string Title { get; set; }
         public string Description { get; set; }
-
-        public ICollection<Link> Links { get; set; }
     }
 }
