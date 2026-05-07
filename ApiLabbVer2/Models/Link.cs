@@ -8,12 +8,8 @@ namespace ApiLabbVer2.Models
 
         [Required]
         public string Url { get; set; }
-
-        [Required]
-        public ICollection<Person> Persons { get; set; }
-
-        [Required]
-        public ICollection<Interest> Interests { get; set; }
+        public int PersonId { get; set; }
+        public int Interestid { get; set; }
 
     }
 }
