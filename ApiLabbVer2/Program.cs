@@ -28,7 +28,6 @@ namespace ApiLabbVer2
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-            builder.Services.AddControllers();
 
             app.MapControllers();
 
