@@ -15,7 +15,7 @@ namespace ApiLabbVer2.Controllers
             _context = context;
         }
 
-        [HttpGet("{id}/interests")]
+        [HttpGet("/interests")]
         public async Task<IActionResult> GetPersoninterests(int id)
         {
             var person = await _context.Persons.FindAsync(id);
@@ -46,6 +46,20 @@ namespace ApiLabbVer2.Controllers
             };
 
             return Ok(response);
+        }
+
+        [HttpGet("/AllPersons")]
+        public async Task<IActionResult> GetAllPersons()
+        {
+            var persons = await (
+                from p in _context.Persons
+                select new
+                {
+                    Name = p.Name,
+                }
+                ).ToListAsync();
+
+            return Ok(persons);
         }
     }
 }
